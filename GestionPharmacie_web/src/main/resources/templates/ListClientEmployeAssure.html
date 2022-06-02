@@ -1,0 +1,46 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+<div align="Center"><h1>Client Employe Assure</h1></div>
+
+<div align="center">
+<table border="1" cellpadding="10">
+ <thead>
+ <tr>
+ <th>id Client</th>
+ <th>Nom Client</th>
+ <th>Prenom Client</th>
+ <th>Genre</th>
+ <th>Adresse</th>
+ <th>Numero Assurance</th>
+ <th>Nom assureur</th>
+ <th>Remise </th>
+ <th>Action</th>
+ </tr>
+ </thead> 
+ <tbody>
+    <tr th:each="ClientEmployeAssure : ${listClientEmployeAssure}">
+ 	<td th:text="${ClientEmployeAssure.idClient}">id Client</td>
+ 	<td th:text="${ClientEmployeAssure.nom}">nom</td>
+ 	<td th:text="${ClientEmployeAssure.prenom}">Prenom</td>
+ 	<td th:text="${ClientEmployeAssure.sexe}">Genre</td>
+ 	<td th:text="${ClientEmployeAssure.adresse}">Adresse</td>
+ 	<td th:text="${ClientEmployeAssure.numeroPoliceAssurance}">Numero Assurance</td>
+ 	<td th:text="${ClientEmployeAssure.nomAssureur}">Nom Assureur</td>
+ 	<td th:text="${ClientEmployeAssure.remise}">Taux Remise</td>
+ 	<td>
+ 		<a th:href="@{'/ModifierEmployeAssure/' + ${ClientEmployeAssure.idClient}}">Modifier</a>
+ 		   &nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a th:href="@{'/SupprimerClientEmplAss&Produit/' + ${ClientEmployeAssure.idClient}}">Supprimer Client && Produits</a>
+ 	</td>
+ </tr> 
+ </tbody>
+</table>
+</div>
+</body>
+</html>

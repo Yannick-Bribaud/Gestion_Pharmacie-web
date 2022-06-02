@@ -1,0 +1,50 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+
+<div align="center">
+	<h1>Gestion Pharmacie</h1>
+	
+	<div>
+	<h3><a href="ListClientAssure"> Liste Client Assure </a></h3>
+	<h3><a href="ListClientNonAssure"> Liste Client Non Assure</a></h3>
+	<h3><a href="ListClientEmployeAssure"> Liste Client Employe Assure</a></h3> 
+	<h3><a href="ListClientEmployeNonAssure"> Liste Client Employe Non Assure</a></h3>
+	<h3><a href="ListeTousProduits"> Liste des Produits</a></h3>
+	<h3><a href="AjoutClient"> Ajouter Client </a></h3>
+	</div>
+		
+</div>
+<div align="center">
+ 
+ 
+<table border="1" cellpadding="10">
+ <thead>
+ <tr>
+ <th>id Client</th>
+ <th>Adresse</th>
+ <th>Nom</th>
+ <th>Prenom</th>
+ <th>Sexe</th>
+ </tr>
+ </thead> 
+ <tbody>
+ <tr th:each="Client : ${listClient}">
+ 	<td th:text="${Client.idClient}">id Client</td>
+ 	<td th:text="${Client.nom}">Nom</td>
+ 	<td th:text="${Client.prenom}">Prenom</td>
+ 	<td th:text="${Client.sexe}">Sexe</td>
+ 	<td th:text="${Client.adresse}">Addresse</td>
+ 	
+ 	
+ </tr> 
+ </tbody>
+</table>
+</div>
+</body>
+</html>

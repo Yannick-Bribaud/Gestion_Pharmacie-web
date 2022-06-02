@@ -1,0 +1,41 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+<div align="Center"><h1>Produits de la Parapharmacie</h1></div>		
+<div align="center">
+<table border="1" cellpadding="10">
+ <thead>
+ <tr>
+	 <th>id_Produit</th>
+	 <th>Nom_Produit</th>
+	 <th>Cout_Produit</th>
+	 <th>Prise Encharge</th>
+	 <th>Categorie Produit</th>
+	 <th>id_Client</th>
+	 <th>Action</th>
+ </tr>
+ </thead> 
+ <tbody>
+    <tr th:each="Parapharmacie : ${listParapharmacie}">
+ 	<td th:text="${Parapharmacie.idProduit}">id Produit</td>
+ 	<td th:text="${Parapharmacie.nomProduit}">Nom Produit</td>
+ 	<td th:text="${Parapharmacie.coutProduit}">Cout Produit</td>
+ 	<td th:text="${Parapharmacie.prisEncharge}">Prise en charge</td>
+ 	<td th:text="${Parapharmacie.categorie}"> Categorie</td>
+ 	<td th:text="${Parapharmacie.client.idClient}">Id_Client</td>
+ 	<td>
+ 		<a  th:href="@{'/ModifierParapharmacie/' + ${Parapharmacie.idProduit}}">Modifier</a>
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a th:href="@{'/SupprimerParapharmacie/' + ${Parapharmacie.idProduit}}">Supprimer</a>
+ 	</td>
+ </tr> 
+ </tbody>
+</table>
+</div>
+</body>
+</html>

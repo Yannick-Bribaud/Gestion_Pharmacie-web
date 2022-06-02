@@ -1,0 +1,39 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+<div align="Center"><h1>Produits Pharmaceutique</h1></div>		
+<div align="center">
+<table border="1" cellpadding="10">
+ <thead>
+ <tr>
+	 <th>id_Produit</th>
+	 <th>Nom_Produit</th>
+	 <th>Cout_Produit</th>
+	 <th>Prise Encharge</th>
+	 <th>id_Client</th>
+	 <th>Action</th>
+ </tr>
+ </thead> 
+ <tbody>
+    <tr th:each="Medicament : ${listMedicament}">
+ 	<td th:text="${Medicament.idProduit}">id Produit</td>
+ 	<td th:text="${Medicament.nomProduit}">Nom Produit</td>
+ 	<td th:text="${Medicament.coutProduit}">Cout Produit</td>
+ 	<td th:text="${Medicament.prisEncharge}">Prise en charge</td>
+ 	<td th:text="${Medicament.client.idClient}">Id_Client</td>
+ 	<td>
+ 		<a  th:href="@{'/ModifierMedicament/' + ${Medicament.idProduit}}">Modifier</a>
+ 		&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a th:href="@{'/SupprimerMedicament/' + ${Medicament.idProduit}}">Supprimer</a>
+ 	</td>
+ </tr> 
+ </tbody>
+</table>
+</div>
+</body>
+</html>

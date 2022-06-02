@@ -1,0 +1,40 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+	<div align="Center">
+	<h1>Ajouter Client Non Assure</h1>
+	<br/>
+	
+	<form action="#" th:action="@{/AjouterClientNonAssure}" th:object="${clientNonAssure}" method="post">
+	<table border="0" cellpadding="0">
+		<tr>
+			<td><h4>Nom Client</h4></td>
+			<td><input type="text" th:field="*{nom}"/></td>
+		</tr>
+		<tr>
+			<td><h4>Prenom Client</h4></td>
+			<td><input type="text" th:field="*{prenom}"/></td>
+		</tr>
+		<tr>
+			<td><h4>Genre Client</h4></td>
+			<td><input type="text" th:field="*{sexe}"/></td>
+		</tr>
+		<tr>
+			<td><h4>Adresse Client</h4></td>
+			<td><input type="text" th:field="*{adresse}"/></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="Center"><button type="submit">Ajouter</button></td>
+		</tr>
+		
+	</table>
+	</form>
+		
+	</div>
+</body>
+</html>

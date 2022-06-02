@@ -1,0 +1,51 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+	<div align="Center">
+	<h1>Ajouter Produit Parapharmaceutique</h1>
+	<br/>
+	<form action="#" th:action="@{/AjoutProduitParapharmaceutique}" th:object="${parapharmacie}" method="post">
+	<table border="0" cellpadding="0">
+		<tr>
+			<td><h4> id Produit </h4></td>
+			<td><input type="text" th:field="*{idProduit}"/></td>
+		</tr>
+		<tr>
+			<td><h4> Nom Produit </h4></td>
+			<td><input type="text" th:field="*{nomProduit}"/></td>
+		</tr>
+		<tr>
+			<td><h4> Cout Produit </h4></td>
+			<td><input type="text" th:field="*{coutProduit}"/></td>
+		</tr>
+		<tr>
+			<td><h4> Categorie Produit </h4></td>
+			<td><input type="text" th:field="*{categorie}"/></td>
+		</tr>	
+	</table>
+	<div>
+	<h4><label class="col-form-label col-sm-4">Client</label></h4>
+	<div align="Center" class="col-sm-8">
+	<select th:field="*{client}" class="form-control" required="required">
+		<th:block  th:each="Clt: ${listClient}">
+				<option th:text="${Clt.nom}" th:value="${Clt.idClient}"/>
+		</th:block>
+	</select>
+	
+	  <div class="text-center p-3">
+		<button type="submit" class="btn btn-primary">Ajouter</button>
+	</div>
+	</div>
+	
+	
+	</div>
+</form>
+		
+	</div>
+</body>
+</html>

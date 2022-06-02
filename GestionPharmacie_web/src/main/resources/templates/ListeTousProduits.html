@@ -1,0 +1,41 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scal=1.0"> 
+<title></title>
+</head>
+<body>
+<div align="Center"><h1>Produits</h1></div>
+
+	<div align="Center">
+	<h3><a href="ListProduitMedicaments"> Liste Produits Pharmaceutiques </a></h3>
+	<h3><a href="ListProduitParapharmacie"> Liste Produits Parapharmaceutique </a></h3>
+	<h3><a href="AjoutProduitParapharmacie"> Ajout Parapharmacie </a></h3>
+	<h3><a href="AjoutProduitMedicament"> Ajout Medicament</a></h3>
+	</div>
+		
+<div align="center">
+<table border="1" cellpadding="10">
+ <thead>
+ <tr>
+	 <th>id Produit</th>
+	 <th>Nom Produit</th>
+	 <th>Cout Produit</th>
+	 <th>Prise en charge</th>
+	 <th>id Client</th>
+ </tr>
+ </thead> 
+ <tbody>
+    <tr th:each="Produit : ${listProduit}">
+ 	<td th:text="${Produit.idProduit}">id Produit</td>
+ 	<td th:text="${Produit.nomProduit}">Nom Produit</td>
+ 	<td th:text="${Produit.coutProduit}">Cout Produit</td>
+ 	<td th:text="${Produit.prisEncharge}">Prise en charge</td>
+ 	<td th:text="${Produit.client.idClient}">Id Client</td>
+ </tr> 
+ </tbody>
+</table>
+</div>
+</body>
+</html>
